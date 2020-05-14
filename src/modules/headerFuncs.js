@@ -8,9 +8,8 @@ const headerFuncs = () => {
     header.addEventListener('click', event => {
       const target = event.target;
 
-      //? Вызов меню в мобильной версии и его закрытие
       
-      
+      //! Вызов меню в мобильной версии и его закрытие
       if (target.parentNode.matches('.menu-button')){
         const menu = document.querySelector('.popup-menu');   
         menu.style.display = 'block';
@@ -19,6 +18,15 @@ const headerFuncs = () => {
       if (target.parentNode.matches('.close-menu-btn')){
         const menu = document.querySelector('.popup-menu');   
         menu.style.display = 'none';
+      }
+
+      //! Выпадающее меню с выбором филиала
+      const listClub = document.querySelector('.clubs-list > ul');
+      if (target.closest('.club-select') && listClub.style.display !== 'block'){
+        
+        listClub.style.display = 'block';
+      } else if (target.closest('.club-select') && listClub.style.display === 'block'){
+        listClub.style.display = 'none';
       }
 
 
