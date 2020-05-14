@@ -12,7 +12,7 @@ const headerFuncs = () => {
       //! Вызов меню в мобильной версии и его закрытие
       if (target.parentNode.matches('.menu-button')){
         const menu = document.querySelector('.popup-menu');   
-        menu.style.display = 'block';
+        menu.style.display = 'flex';
       }
 
       if (target.parentNode.matches('.close-menu-btn')){
@@ -29,6 +29,38 @@ const headerFuncs = () => {
         listClub.style.display = 'none';
       }
 
+      //! PopUp-1
+      const popUp1 = document.getElementById('free_visit_form');
+      if (target.closest('.free-visit')){
+        popUp1.style.display = 'block';
+      } 
+      popUp1.addEventListener('click', event => {
+        const target = event.target;
+        
+  
+        if (target.matches('.overlay') || target.closest('.close-form')){
+          popUp1.style.display = 'none';
+        }
+      });
+      
+
+      
+
+
+
+      //! PopUp-2
+      const popUp2 = document.getElementById('callback_form');
+      if (target.closest('.callback-btn')){
+        popUp2.style.display = 'block';
+      } 
+      popUp2.addEventListener('click', event => {
+        const target = event.target;
+        
+  
+        if (target.matches('.overlay') || target.closest('.close-form')){
+          popUp2.style.display = 'none';
+        }
+      });
 
 
     })
