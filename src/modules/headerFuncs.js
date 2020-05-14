@@ -29,17 +29,24 @@ const headerFuncs = () => {
 
   //? Бургер меню
   const burgerMenu = () => {
-    if (window.innerWidth < 768){
-      const bigMenu = document.querySelector('.hidden-small');
-      const smallMenu = document.querySelectorAll('.menu-button');
-
-      smallMenu.forEach(elem => {
-        elem.style.display = 'block'
-      })
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 768){
+        const bigMenu = document.querySelector('.hidden-small');
+        const smallMenu = document.querySelector('.menu-button');
 
 
-      bigMenu.style.display = 'none'
-    }
+        smallMenu.style.display = 'block';
+        bigMenu.style.display = 'none';
+      } else  {
+        const bigMenu = document.querySelector('.hidden-small');
+        const smallMenu = document.querySelector('.menu-button');
+
+        
+        smallMenu.style.display = 'none';
+        bigMenu.style.display = 'flex';
+      }
+    })
+      
   }
   burgerMenu();
 }
