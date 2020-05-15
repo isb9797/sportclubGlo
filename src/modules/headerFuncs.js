@@ -117,6 +117,33 @@ const headerFuncs = () => {
       
   }
   burgerMenu();
+
+
+  //? Главный слайдер
+  const startMainSlider = (interval) => {
+    const slides = document.querySelectorAll('.main-slider > .slide');
+    const slidesCount = slides.length;
+    let count = 0;
+    let countNext = 1;
+    setInterval(() => {
+      
+      slides[count].style.display = 'none';
+      slides[countNext].style.display = 'flex';
+      count++;
+      countNext++;
+      if (count === slidesCount){
+        count = 0;
+      }
+      if ( countNext === slidesCount-1){
+        countNext = 1;
+      }
+      
+      
+    }, interval);
+    
+    
+  }
+  startMainSlider(5000);
 }
 
 export default headerFuncs;
