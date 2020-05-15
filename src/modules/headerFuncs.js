@@ -123,6 +123,7 @@ const headerFuncs = () => {
   const startMainSlider = (interval) => {
     const slides = document.querySelectorAll('.main-slider > .slide');
     const slidesCount = slides.length;
+    console.log('slidesCount: ', slidesCount);
     let count = 0;
     let countNext = 1;
     setInterval(() => {
@@ -133,9 +134,10 @@ const headerFuncs = () => {
       countNext++;
       if (count === slidesCount){
         count = 0;
+        //slides[0].style.display = 'flex'
       }
-      if ( countNext === slidesCount-1){
-        countNext = 1;
+      if ( countNext === slidesCount){
+        countNext = 0;
       }
       
       
