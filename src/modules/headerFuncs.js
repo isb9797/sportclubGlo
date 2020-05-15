@@ -15,7 +15,7 @@ const headerFuncs = () => {
         menu.style.display = 'flex';
       }
 
-      if (target.parentNode.matches('.close-menu-btn')){
+      if (target.parentNode.matches('.close-menu-btn') || target.closest('.scroll')){
         const menu = document.querySelector('.popup-menu');   
         menu.style.display = 'none';
       }
@@ -60,6 +60,34 @@ const headerFuncs = () => {
         if (target.matches('.overlay') || target.closest('.close-form')){
           popUp2.style.display = 'none';
         }
+      });
+
+      //! PopUp-gift
+      //BUG Переделать функцию
+      const popUp3 = document.getElementById('gift');
+      const giftBtn = document.querySelector('body > .fixed-gift');
+      console.log('giftBtn: ', giftBtn);
+      giftBtn.addEventListener('click', event => {
+        
+      //Todo Не работает клик по самой кнопке
+        const target = event.target;
+        if (target.closest('.fixed-gift')){
+          giftBtn.remove();
+          popUp3.style.display = 'block';
+        }
+        
+          
+        
+      });
+
+      popUp3.addEventListener('click', event => {
+        const target = event.target;
+        
+  
+        if (target.matches('.overlay') || target.closest('.close-form')){
+          popUp3.style.display = 'none';
+        }
+      
       });
 
 
