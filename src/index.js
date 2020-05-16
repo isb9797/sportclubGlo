@@ -14,9 +14,12 @@ import "remove-polyfill"
 //? Подключение основных модулей
 
 import headerFuncs from './modules/headerFuncs';
+import carousel from './modules/carousel';
 
 
 //? Функции шапки сайта
-
 headerFuncs();
+
+//? Карусель сайта
+carousel();
 

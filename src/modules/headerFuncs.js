@@ -114,7 +114,26 @@ const headerFuncs = () => {
         bigMenu.style.display = 'flex';
       }
     })
+    
+    
+    const topMenu = document.querySelector('.top-menu');
+    const cssTop = topMenu.style.top;
+
+    //TODO сделать скрол фикс для млобильного меню
+    window.addEventListener('scroll', () => {
+      let offsetTop = topMenu.getBoundingClientRect().top;
       
+       
+      
+      if (offsetTop <= 0 ) {
+        
+      }
+
+      
+      
+      
+    })
+    
   }
   burgerMenu();
 
