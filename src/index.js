@@ -15,6 +15,9 @@ import "remove-polyfill"
 
 import headerFuncs from './modules/headerFuncs';
 import carousel from './modules/carousel';
+import calc from './modules/calc';
+import galary from './modules/galary';
+
 
 
 //? Функции шапки сайта
@@ -22,4 +25,10 @@ headerFuncs();
 
 //? Карусель сайта
 carousel();
+
+//? Галерея
+galary();
+
+//? Калькулятор
+calc();
 
