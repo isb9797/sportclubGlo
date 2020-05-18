@@ -62,6 +62,8 @@ const headerFuncs = () => {
         }
       });
 
+
+
       //! PopUp-gift
       //BUG Переделать функцию
       const popUp3 = document.getElementById('gift');
@@ -165,6 +167,26 @@ const headerFuncs = () => {
     
   }
   startMainSlider(5000);
+
+
+  const arrowToUp = () => {
+    const toTop = document.querySelector('#totop');
+    toTop.style.display = 'none';
+    window.addEventListener('scroll', event => {
+      const clubsSection = document.querySelector('#clubs');
+      
+
+      console.log(clubsSection.getBoundingClientRect().top);
+      if (clubsSection.getBoundingClientRect().top <= 0){
+        toTop.style.display = 'block';
+      } else {
+        toTop.style.display = 'none';
+      }
+    })
+  }
+
+
+  arrowToUp();
 }
 
 export default headerFuncs;
