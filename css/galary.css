@@ -1,0 +1,13 @@
+.slide-active {
+  display: block !important;
+  
+}
+
+
+.gallery-slider > .slide{
+  display: none;
+}
+
+.active {
+  background: #ffd11a !important;
+}

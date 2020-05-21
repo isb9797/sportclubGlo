@@ -1,12 +1,36 @@
 //? Галерея
 
 const galary = () => {
-  try {
+  //try {
     const galary = document.querySelector(".gallery-slider");
     const slides = galary.querySelectorAll(".slide");
     const galaryLength = slides.length;
     const nextBtn = galary.querySelector(".slider-arrow.next");
     const prevBtn = galary.querySelector(".slider-arrow.prev");
+    const dotsContainer = galary.querySelector('.dots');
+    const dots = galary.querySelectorAll('.dot');
+    let active = galary.querySelector('.active');
+
+    
+
+
+    dotsContainer.style.cssText = `
+      display: flex;
+      justify-content: space-between;
+      width: 300px; 
+      margin: 0 auto;
+    `;
+
+    dots.forEach(el => {
+      el.style.cssText = `
+        background-color: #000;
+        width: 15%;
+        height: 10px;
+        cursor: pointer;
+      `;
+    });
+
+    active.style.backgroundColor = 'red';
 
     let interval;
 
@@ -24,6 +48,32 @@ const galary = () => {
     };
 
     startSet();
+
+
+
+
+    const dotsChanger = () => {
+      dots.forEach((el, index) => {
+        el.addEventListener('click', (event) => {
+          const target = event.target;
+  
+          slides[count-1].style.display = 'none';
+
+          target.classList.addClass = 'active'
+          slides[index].style.display = 'block';
+          
+  
+  
+        })
+      })
+    }
+
+    dotsChanger();
+
+
+
+
+
 
     const autoPlay = () => {
       if (count <= maxCount) {
@@ -82,9 +132,9 @@ const galary = () => {
     prevBtn.addEventListener("click", prevSlide);
 
     startSlide();
-  } catch {
-    return 0;
-  }
+  //} catch {
+   // return 0;
+ // }
 };
 
 export default galary;

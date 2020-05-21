@@ -18,7 +18,7 @@ import checkInputWord from './modules/checkInputWord';
 import headerFuncs from './modules/headerFuncs';
 import carousel from './modules/carousel';
 import calc from './modules/calc';
-import galary from './modules/galary';
+import slider from './modules/galaryAlt';
 import sendForm from "./modules/sendForm";
 
 
@@ -36,7 +36,7 @@ checkInputWord('input[placeholder="Ваше имя..."]');
 carousel();
 
 //? Галерея
-galary();
+slider();
 
 //? Калькулятор
 calc();

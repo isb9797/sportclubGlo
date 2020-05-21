@@ -9,24 +9,39 @@ const carousel = () => {
     const wrapperSlider = document.querySelector("#services > .wrapper");
     const services = document.querySelector("#services");
 
+    slider.style.gap = '0.4rem'
+    const gap = parseFloat(slider.style.gap);
+    
+    let maxCount = 6;
+
     const nextBtn = slider.querySelector(".slider-arrow.next");
     const prevBtn = slider.querySelector(".slider-arrow.prev");
 
     const startSet = () => {
+      window.addEventListener("resize", () => {
+        if (window.outerWidth <= 768){
+          slider.style.maxWidth = '768px';
+          maxCount = 8;
+        }else {
+          slider.style.maxWidth = '100%';
+          maxCount = 6;
+        }
+      });
       slider.style.overflow = "hidden";
       slider.style.position = "relative";
 
       slider.style.justifyСontent = "space-between";
-      slider.style.gap = "0.3rem";
+      //slider.style.gap = "0.3rem";
 
       slides.forEach((slide) => {
-        slide.style.cssText = "min-width: 210px";
+        slide.style.minWidth = " 210px";
       });
+      
       slides[0].style.cssText =
         "min-width: 210px;transition: all 0.2s linear 0s; margin-left: 0px;";
       let stepCount = 0;
       const nextService = () => {
-        if (stepCount === 5) {
+        if (stepCount === maxCount) {
           return;
         } else {
           stepCount++;
@@ -56,6 +71,8 @@ const carousel = () => {
     };
 
     startSet();
+    
+    
   } catch {
     return 0;
   }
